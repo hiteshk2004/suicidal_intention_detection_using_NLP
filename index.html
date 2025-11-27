@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Doctor - Mental Health Assessment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      }
+      
+      /* 3D Scene Setup */
+      .perspective-1000 {
+        perspective: 1200px;
+      }
+      .transform-style-3d {
+        transform-style: preserve-3d;
+      }
+      
+      /* Card Animation States */
+      .card-enter {
+        animation: cardEnter 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+      }
+      .card-exit {
+        animation: cardExit 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+      }
+
+      @keyframes cardEnter {
+        from {
+          opacity: 0;
+          transform: translateY(40px) translateZ(-100px) rotateX(-10deg);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) translateZ(0) rotateX(0);
+        }
+      }
+
+      @keyframes cardExit {
+        from {
+          opacity: 1;
+          transform: translateY(0) translateZ(0) rotateX(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(-40px) translateZ(-50px) rotateX(10deg);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translate3d(0, 20px, 0);
+        }
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.5s ease-out forwards;
+      }
+      
+      /* Glassmorphism */
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 text-slate-900 min-h-screen">
+    <div id="root"></div>
+  </body>
+</html>
